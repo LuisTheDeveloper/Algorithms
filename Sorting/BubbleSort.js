@@ -1,34 +1,14 @@
-const colors = require("colors");
+const BubbleSort = (array) => {
+  const arr = array.slice();
 
-// Bubble Sort
-let swapped = true;
-const BubbleSort = () => {
-  let myArray = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
-
-  console.log(`BubbleSort of array: ${myArray}`.bgRed);
-
-  const Sort = (arr) => {
-    swapped = false;
-    let end = arr.length - 1;
-
-    for (let i = 0, j = 1; i < end; i++, j++) {
-      if (arr[i] > arr[j]) {
-        swapped = true;
-        let temp = arr[j];
-        arr[j] = arr[i];
-        arr[i] = temp;
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
       }
     }
-    end--;
-  };
-
-  do {
-    Sort(myArray);
-
-    swapped
-      ? console.log(`BubbleSort in action: ${myArray}`)
-      : console.log(`Sorted array: ${myArray}`.bgBlue);
-  } while (swapped);
+  }
+  return arr;
 };
 
 module.exports = BubbleSort;
