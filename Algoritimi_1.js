@@ -327,6 +327,6 @@ const SumPrimeNumbers = (num) => {
 //
 
 // list of numbers we wanna test
-var test_values = [1999999];
+var test_values = [199];
 // Here we call the function we want to use and pass the test values:
 run_function(SumPrimeNumbers, test_values);
